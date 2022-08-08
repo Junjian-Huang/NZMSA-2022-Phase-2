@@ -4,6 +4,15 @@
         <name>backend</name>
     </assembly>
     <members>
+        <member name="M:backend.Controllers.HeroController.#ctor(System.Net.Http.IHttpClientFactory)">
+            <summary />
+        </member>
+        <member name="M:backend.Controllers.HeroController.GetHeroHotPosts">
+            <summary>
+            Gets the Mario JSON from the API. 
+            </summary>
+            <returns>A JSON object return from API</returns>
+        </member>
         <member name="T:backend.Controllers.WeatherForecastController">
             <summary>
             This is the weather forecast controller that comes as a default from the project template when creating

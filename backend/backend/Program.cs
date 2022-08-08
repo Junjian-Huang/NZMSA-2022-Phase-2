@@ -9,6 +9,11 @@ builder.Services.AddSwaggerDocument(options =>
 });
 
 
+builder.Services.AddHttpClient("hero", configureClient: client =>
+{
+    client.BaseAddress = new Uri("https://smashbros-unofficial-api.vercel.app/api/");
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
