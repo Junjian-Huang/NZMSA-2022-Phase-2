@@ -5,13 +5,17 @@
     </assembly>
     <members>
         <member name="M:backend.Controllers.HeroController.#ctor(System.Net.Http.IHttpClientFactory)">
-            <summary />
+            <summary>
+            this is the HTTP client
+            </summary>
+            <param name="clientFactory"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="M:backend.Controllers.HeroController.GetHeroHotPosts">
             <summary>
-            Gets the Mario JSON from the API. 
+            Gets the default Mario JSON object from the API. 
             </summary>
-            <returns>A JSON object return from API</returns>
+            <returns>A JSON object with detail from API</returns>
         </member>
         <member name="M:backend.Controllers.TestingCaseController.GetSum(System.Int32,System.Int32)">
             <summary>

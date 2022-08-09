@@ -7,7 +7,12 @@ namespace backend.Controllers
     public class HeroController : ControllerBase
     {
         private readonly HttpClient _client;
-        /// <summary />
+        
+        /// <summary>
+        /// this is the HTTP client
+        /// </summary>
+        /// <param name="clientFactory"></param>
+        /// <exception cref="ArgumentNullException"></exception>
         public HeroController(IHttpClientFactory clientFactory)
         {
             if (clientFactory is null)
@@ -20,9 +25,9 @@ namespace backend.Controllers
 
 
         /// <summary>
-        /// Gets the Mario JSON from the API. 
+        /// Gets the default Mario JSON object from the API. 
         /// </summary>
-        /// <returns>A JSON object return from API</returns>
+        /// <returns>A JSON object with detail from API</returns>
         [HttpGet]
         //[Route("v1/")]
         [ProducesResponseType(200)]

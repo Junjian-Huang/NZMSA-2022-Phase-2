@@ -4,7 +4,7 @@ namespace backend.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TestingCaseController : Controller
+    public class TestingCaseController : ControllerBase
     {
         /// <summary>
         /// Adds two numbers together
