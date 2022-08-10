@@ -16,19 +16,31 @@ namespace TestProject
         public void Test1()
         {
             int input1 = 500;
-            int input2 = 300;
-            
+
+            //arrange
+            TestingCaseController t = new TestingCaseController();
+
+
+            // act
+            string result = t.TestingStatus(input1).ToString();
+
+            // assert
+            Assert.AreEqual("Microsoft.AspNetCore.Mvc.OkObjectResult", result);
+        }
+
+        [Test]
+        public void Test2()
+        {
+            int input2 = -1;
 
             //arrange
             TestingCaseController t = new TestingCaseController();
 
             // act
-            var result = t.GetSum(input1, input2);
+            string result2 = t.TestingStatus(input2).ToString();
 
-            // assert
-            
-            //Assert.AreEqual(t.Response.StatusCode.ToString(),200);
-            Assert.AreEqual(result.GetType(), result);
+            // assert  
+            Assert.AreEqual("Microsoft.AspNetCore.Mvc.BadRequestObjectResult", result2);
         }
     }
 }

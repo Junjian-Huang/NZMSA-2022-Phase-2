@@ -5,21 +5,24 @@
     </assembly>
     <members>
         <member name="M:backend.Controllers.HeroController.#ctor(System.Net.Http.IHttpClientFactory)">
-            <summary />
+            <summary>
+            this is the HTTP client
+            </summary>
+            <param name="clientFactory"></param>
+            <exception cref="T:System.ArgumentNullException"></exception>
         </member>
         <member name="M:backend.Controllers.HeroController.GetHeroHotPosts">
             <summary>
-            Gets the Mario JSON from the API. 
+            Gets the default Mario JSON object from the API. 
             </summary>
-            <returns>A JSON object return from API</returns>
+            <returns>A JSON object with detail from API</returns>
         </member>
-        <member name="M:backend.Controllers.TestingCaseController.GetSum(System.Int32,System.Int32)">
+        <member name="M:backend.Controllers.TestingCaseController.TestingStatus(System.Int32)">
             <summary>
-            Adds two numbers together
+            Input a positive number
             </summary>
-            <param name="left">The number on the left, which must be a positive integer</param>
-            <param name="right">The number on the right, which must be a positive integer</param>
-            <returns>The sum of the input numbers</returns>
+            <param name="positiveNumber">The number must be a positive integer</param>
+            <returns>Number greater than zero</returns>
         </member>
         <member name="T:backend.Controllers.WeatherForecastController">
             <summary>

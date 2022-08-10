@@ -7,20 +7,19 @@ namespace backend.Controllers
     public class TestingCaseController : ControllerBase
     {
         /// <summary>
-        /// Adds two numbers together
+        /// Input a positive number
         /// </summary>
-        /// <param name="left">The number on the left, which must be a positive integer</param>
-        /// <param name="right">The number on the right, which must be a positive integer</param>
-        /// <returns>The sum of the input numbers</returns>
+        /// <param name="positiveNumber">The number must be a positive integer</param>
+        /// <returns>Number greater than zero</returns>
         [HttpGet]
         [Route("add")]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
-        public IActionResult GetSum(int left, int right)
+        public IActionResult TestingStatus(int positiveNumber)
         {
-            if (left < 0 || right < 0) return BadRequest("The inputs must be greater than zero");
+            if (positiveNumber <= 0) return BadRequest("The inputs must be greater than zero");
 
-            return Ok(left + right);
+            return Ok("The inputs greater than zero");
         }
 
     }
