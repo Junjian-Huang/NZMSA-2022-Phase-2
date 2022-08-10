@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
       <div className="search-field">
-        <h1>Pokédex Search</h1>
+        <h1>Moster Hunter Weapen Search</h1>
         <div style={{ display: "flex", justifyContent: "center" }}>
           <TextField
             id="search-bar"
@@ -43,11 +43,11 @@ function App() {
         <div></div>
       ) : (
         <div
-          id="pokemon-result"
+          id="Moster-result"
           style={{
             maxWidth: "800px",
             margin: "0 auto",
-            padding: "100px 10px 0px 10px",
+            padding: "100px 50px 60px 20px",
           }}
         >
           
@@ -62,20 +62,17 @@ function App() {
               <Grid item>
                 <Box>
                   {pokemonInfo === undefined || pokemonInfo === null ? (
-                    <h1> Pokemon not found</h1>
+                    <h1> Moster Hunter data not found.</h1>
                   ) : (
                     <div>
-                      <h1>
-                        
-                      </h1>
                       <p>
                         ID: {pokemonInfo.id}
                         <br />
-                        
+                        Name: {pokemonInfo.name}
                         <br />
-                        
+                        Rank: {pokemonInfo.rank}
                         <br />
-                        
+                        Type: {pokemonInfo.type}
                         <br />
                         
                       </p>
@@ -86,12 +83,32 @@ function App() {
               <Grid item>
                 <Box>
                   {pokemonInfo?.name ? (
-                    <img
-                      height="300px"
-                      width="300px"
+                   <div>
+                    <p> Male :</p>
+                   <img
+                      height="200px"
+                      width="200px"
                       alt={pokemonInfo.name}
                       src={pokemonInfo.assets.imageMale}
                     ></img>
+                    </div>
+                  ) : (
+                    <Skeleton width={300} height={300} />
+                  )}
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box>
+                  {pokemonInfo?.name ? (
+                    <div>
+                      <p>Feamal :</p>
+                    <img
+                      height="200px"
+                      width="200px"
+                      alt={pokemonInfo.name}
+                      src={pokemonInfo.assets.imageFemale}
+                    ></img>
+                    </div>
                   ) : (
                     <Skeleton width={300} height={300} />
                   )}
@@ -103,39 +120,6 @@ function App() {
       )}
     </div>
   );
-
-  // Credit to codingsparkles for providing the color mapping
-  /*function getBackColor(poke: Pokemon | undefined | null) {
-    let backColor = "#EEE8AA";
-    if (poke === undefined || poke === null) {
-      return backColor;
-    }
-    const pokeTypes = poke.types.map((i) => i.type.name);
-    if (pokeTypes.includes("fire")) {
-      backColor = "#FEC5BB";
-    } else if (pokeTypes.includes("grass")) {
-      backColor = "#80FFDB";
-    } else if (pokeTypes.includes("water")) {
-      backColor = "#DFE7FD";
-    } else if (pokeTypes.includes("bug")) {
-      backColor = "#B0DEA3";
-    } else if (pokeTypes.includes("normal")) {
-      backColor = "#E0FFFF";
-    } else if (pokeTypes.includes("electric")) {
-      backColor = "#D8E2DC";
-    } else if (pokeTypes.includes("ground")) {
-      backColor = "#FAD2E1";
-    } else if (pokeTypes.includes("fairy")) {
-      backColor = "#FFF1E6";
-    } else if (pokeTypes.includes("ghost")) {
-      backColor = "#F8EDEB";
-    } else if (pokeTypes.includes("fighting")) {
-      backColor = "#F1FAEE";
-    } else if (pokeTypes.includes("rock")) {
-      backColor = "#A8DADC";
-    }
-    return backColor;
-  }*/
 
   function search() {
     console.log(pokemonName);
@@ -152,18 +136,6 @@ function App() {
         setPokemonInfo(null);
       });
   }
-
-  /*function getTypes() {
-    if (pokemonInfo !== undefined && pokemonInfo !== null) {
-      return pokemonInfo.types.map((item) => item.type.name);
-    }
-  }*/
-
-  /*function getAbilities() {
-    if (pokemonInfo !== undefined && pokemonInfo !== null) {
-      return pokemonInfo.abilities.map((ability) => ability.ability.name);
-    }
-  }*/
 }
 
 export default App;
